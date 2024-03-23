@@ -1,16 +1,13 @@
-<<<<<<< Updated upstream
-
-=======
 ---
---- title: "İLHAN TEMİZ" ---
+--- title: "İlhan Temiz" ---
 ---
 
-![](images/145441-4 bio.jpg){fig-align="center" width="151"}
+![](images/145441-4%20bio-01.jpg){fig-align="center" width="200"}
 
 # Eğitim
 
--   Lisans, Makine Mühendisliği, Yıldız Teknik Üniversitesi, Türkiye, 2008 - 2013.
--   Yüksek Lisans, Endüstri Mühendisliği, Hacettepe Üniversitesi, Türkiye, 2024 - devam ediyor.
+-   Lisans, Makine Mühendisliği, Yıldız Teknik Üniversitesi, Türkiye, 2008 - 2013
+-   Yüksek Lisans, Mühendislik Yönetimi, Hacettepe Üniversitesi, Türkiye, 2023 - devam ediyor.
 
 # İş Deneyimi
 
@@ -20,13 +17,13 @@
 
 2.  Adel Kalemcilik, Bakım Uzmanı, 2021-2022
 
-3.  Türk Havacılık ve Uzay Sanayi, Lojistik Mühendisi, 2022-halen
+3.  Türk Havacılık ve Uzay Sanayi, 2022-halen
 
 ## Stajlar
 
-1.  Türk Havacılık ve Uzay Sanayi, Stajyer, 2010
+1.  Türk Havacılık ve Uzay Sanayi, 2010
 
-2.  Nurol Makine, Stajyer, 2011
+2.  Nurol Makine, 2011
 
 # Projeler
 
@@ -34,11 +31,12 @@
 
 # Yayınlar
 
-1.  
+\-
 
 # Yetkinlikler
 
-Catia, Solidworks, Excel, Eagle
+Proje Yönetimi, Catia, Solidworks, Excel, Eagle
 
-# Hobiler
->>>>>>> Stashed changes
+# **Hobiler**
+
+Futbol, Basketbol, Seyehat
