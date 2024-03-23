@@ -42,7 +42,7 @@
 
 # Yetkinlikler
 
-R, Quarto, Git, Python
+Catia V5
 
 # Hobiler
 =======
