@@ -1,0 +1,46 @@
+---
+--- title: "Emre Raşit Eyigün" ---
+---
+
+![](images/57d3ddd5-5e93-4ae3-a6d8-45f31c9a8e7d.jpg){fig-align="center" width="232"}
+
+# Eğitim
+
+-   Lisans, Zonguldak Karaelmas Üniversitesi, Türkiye, 2008 - 2012.
+-   Yüksek Lisans, Endüstri Mühendisliği, Hacettepe Üniversitesi, Türkiye, 2023 - devam ediyor.
+
+# İş Deneyimi
+
+## İşler
+
+1.  Man Türkiye, Tasarım Mühendisi 2018 -
+
+2.  Bozankaya Otomotiv, Tasarım Mühendisi 2017-2018
+
+3.  Farhym Otomotiv, Tasarım Mühendisi 2014-2017
+
+4.  Türk Silahlı Kuvvetleri, Takım Komutanı 2013-2014
+
+5.  Karbon Tasarım, Tasarım Mühendisi 2012-2013
+
+## Stajlar
+
+1.  Tusaş, Stajyer 2011
+
+2.  Küçükpazarlı Havacılık, Stajyer 2010
+
+3.  Ermaksan, Stajyer 2009
+
+# Projeler
+
+1.  TÜBİTAK 1001..........................
+
+# Yayınlar
+
+1.  Dasdemir, E., Batta, R., Koksalan, M., Tezcaner Öztürk, D. (2022) “İHA Yönlendirmesi için Keşif Misyonu: Zaman Bağımlı Ödülleri ve Çoklu Bağlantıları Olan Çok Amaçlı Oryantiring Problemi”, Computers & Operations Research, 145: 105882
+
+# Yetkinlikler
+
+R, Quarto, Git, Python
+
+# Hobiler
