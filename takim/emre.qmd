@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 --- title: "Emre Raşit Eyigün" ---
 ---
@@ -44,3 +45,6 @@
 R, Quarto, Git, Python
 
 # Hobiler
+=======
+
+>>>>>>> 56320a3b27ded72cb875bcdd19137c2aefda1a79
