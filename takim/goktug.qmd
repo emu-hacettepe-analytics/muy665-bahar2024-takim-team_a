@@ -1,20 +1,12 @@
 ---
-<<<<<<< HEAD
---- title: "Miraç Göktuğ" ---
-=======
---- title: "Mirac Göktuğ Ekici" ---
->>>>>>> 3e07442067648a8e4011ea73231f8f09b03335e0
+title: "Göktuğ"
 ---
 
 ![](/assets/images/vesikalik.jpeg){fig-align="center"}
 
 # Eğitim
 
-<<<<<<< HEAD
--   Lisans, deneme, .................................... Üniversitesi, Türkiye, 20xx - 20xx.
-=======
--   Lisans, ..............................nkjjjj.............................. Üniversitesi, Türkiye, 20xx - 20xx.
->>>>>>> 3e07442067648a8e4011ea73231f8f09b03335e0
+-   Lisans, ................................., .................................... Üniversitesi, Türkiye, 20xx - 20xx.
 -   Yüksek Lisans, Endüstri Mühendisliği, Hacettepe Üniversitesi, Türkiye, 20xx - devam ediyor.
 
 # İş Deneyimi
