@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 ---
 --- title: "Emre Raşit Eyigün" ---
 ---
 
-![](images/57d3ddd5-5e93-4ae3-a6d8-45f31c9a8e7d.jpg){fig-align="center" width="284"}
+![](images/57d3ddd5-5e93-4ae3-a6d8-45f31c9a8e7d.jpg){fig-align="center" width="232"}
 
 # Eğitim
 
@@ -42,9 +41,6 @@
 
 # Yetkinlikler
 
-Catia V5
+Catia
 
 # Hobiler
-=======
-
->>>>>>> 56320a3b27ded72cb875bcdd19137c2aefda1a79
