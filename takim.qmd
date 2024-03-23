@@ -6,14 +6,14 @@ Takım Üyelerimizin detaylı özgemişlerinin yer aldığı kişisel sayfaları
 
 # Takım Üyeleri
 
-1.  [Erdem Aksoy](/takim/erdem.qmd)
+1.  [Erdem AKSOY](/takim/erdem.qmd)
 
-2.  [Miraç göktuğ](/takim/goktug.qmd)
+2.  [Mirac Göktuğ EKİCİ](/takim/goktug.qmd)
 
-3.  [Yağız Uç](/takim/yagız.qmd)
+3.  [Yağız Eren UÇ](/takim/yagız.qmd)
 
-4.  [Emre](/takim/emre.qmd)
+4.  [Emre Raşit EYİGÜN](/takim/emre.qmd)
 
-5.  [Taha Tarhan](/takim/taha.qmd)
+5.  [Taha TARHAN](/takim/taha.qmd)
 
-6.  [İlhan](/takim/ilhan.qmd)
+6.  [İlhan TEMİZ](/takim/ilhan.qmd)
