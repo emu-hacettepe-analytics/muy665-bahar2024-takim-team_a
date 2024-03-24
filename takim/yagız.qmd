@@ -2,7 +2,7 @@
 --- title: "Yağız Eren UÇ" ---
 ---
 
-![](images/Pic.JPG){fig-align="center" width="172"}
+![](images/Pic.JPG){fig-align="center" width="156"}
 
 # Eğitim
 
