@@ -585,6 +585,7 @@
     ]
   },
   {
+<<<<<<< HEAD
     "objectID": "takim/Erdem_aksoy.html#işler",
     "href": "takim/Erdem_aksoy.html#işler",
     "title": "Erdem AKSOY",
@@ -597,5 +598,19 @@
     "title": "Erdem AKSOY",
     "section": "Stajlar",
     "text": "Stajlar\n\nMesan Metal, pozisyon Stajer, yıl 2014"
+=======
+    "objectID": "takim/ilhan.html#işler",
+    "href": "takim/ilhan.html#işler",
+    "title": "İlhan Temiz",
+    "section": "İşler",
+    "text": "İşler\n\nLimak Çimento, Makine Bakım Mühendisi, 2014-2020\nAdel Kalemcilik, Bakım Uzmanı, 2021-2022\nTürk Havacılık ve Uzay Sanayi, 2022-halen"
+  },
+  {
+    "objectID": "takim/ilhan.html#stajlar",
+    "href": "takim/ilhan.html#stajlar",
+    "title": "İlhan Temiz",
+    "section": "Stajlar",
+    "text": "Stajlar\n\nTürk Havacılık ve Uzay Sanayi, 2010\nNurol Makine, 2011"
+>>>>>>> 21950fecd740ae84572e4a77bb3a41d9f1aea5a3
   }
 ]
