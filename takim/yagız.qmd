@@ -1,5 +1,5 @@
 ---
---- title: "Yağız Eren UÇ" ---
+title: "Yağız Eren UÇ"
 ---
 
 ![](images/Pic.JPG){fig-align="center" width="156"}

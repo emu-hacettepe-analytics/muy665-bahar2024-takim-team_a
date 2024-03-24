@@ -1,5 +1,5 @@
 ---
---- title: "Emre Raşit Eyigün" ---
+title: "Emre Raşit Eyigün"
 ---
 
 ![](images/57d3ddd5-5e93-4ae3-a6d8-45f31c9a8e7d.jpg){fig-align="center" width="232"}
