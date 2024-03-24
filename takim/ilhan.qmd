@@ -2,6 +2,8 @@
 title: "İlhan Temiz"
 ---
 
+![](images/145441-4 bio-01.jpg){fig-align="center" width="175"}
+
 # Eğitim
 
 -   Lisans, Makine Mühendisliği, Yıldız Teknik Üniversitesi, Türkiye, 2008 - 2013
