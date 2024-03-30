@@ -37,12 +37,11 @@ website:
       contents:
         - takim.qmd
         - takim/taha.qmd
-        - takim/edindzeko.qmd
         - takim/emre.qmd  
-        - takim/erdem.qmd  
+        - takim/Erdem_aksoy.qmd  
         - takim/ilhan.qmd
         - takim/yagiz.qmd
-        - takim/goktug.qmd  
+        - takim/goktug.qmd
 
                 
         
