@@ -4,18 +4,21 @@ title: "Çalışma 1"
 
 \
 
-Bu çalışmada 3 görevimiz var. Bu görevlerde video özeti, mtcars Veri Seti Üzerinde Çalışma ve son olarak dslabs Veri Seti Üzerinde Çalışma yapmamız isteniyor. Bunlara sırayla aşağıdaki gibi cevaplamaktayız.
+Bu çalışmada 3 görevimiz var. Bu görevlerde video özeti, mtcars veri seti üzerinde çalışma ve son olarak dslabs veri seti üzerinde çalışma yapmamız isteniyor. Bunlara sırayla aşağıdaki gibi cevaplamaktayız.
 
 # MÜY665 İş Analitiği - Ödev 1
 
 ## a) Video Özeti
 
 Video özeti bölümünde grup olarak Baykal Hafızoğlu ve Erdi Daşdemir ile yapılan "Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler" videosu seçilmiştir. Seçilen bu videoya yönelik özet aşağıdaki gibi oluşturulmuştur.
--Veri bilimi ve endüstri mühendisliği arasındaki ilişki, bu disiplinlerin geleceği ve öğrencilerin kariyer yollarını nasıl şekillendirebileceği üzerine sınıf ortamında öğrencilerin de katılımıyla online bir söyleşi yapılmıştır. 
--Baykal Hafızoğlu ve Erdi Daşdemir hocamız, veri biliminin endüstri mühendisliği pratiğinde nasıl bir dönüşüm yarattığını ve bu alandaki yeni teknolojilerin iş dünyasına olan etkilerini ele almışlardır. 
--Akademik ve profesyonel dünyada veri bilimine olan artan ilgiye değinilmiş ve bu trendin nedenleri üzerinde açıklamalarda bulunulmuştur. 
--Söyleşide, öğrencilere ve genç profesyonellere veri bilimi ve endüstri mühendisliği alanlarında başarılı olmak için gerekli beceriler ve bilgiler hakkında değerli tavsiyeler sunmaktadır.
 
+- Veri bilimi ve endüstri mühendisliği arasındaki ilişki, bu disiplinlerin geleceği ve öğrencilerin kariyer yollarını nasıl şekillendirebileceği üzerine sınıf ortamında öğrencilerin de katılımıyla online bir söyleşi yapılmıştır.
+
+- Baykal Hafızoğlu ve Erdi Daşdemir hocalarımız, veri biliminin endüstri mühendisliği pratiğinde nasıl bir dönüşüm yarattığını ve bu alandaki yeni teknolojilerin iş dünyasına olan etkilerini ele almışlardır.
+
+- Akademik ve profesyonel dünyada veri bilimine olan artan ilgiye değinilmiş ve bu trendin nedenleri üzerinde hocalarımız açıklamalarda bulunmuştur.
+
+- Söyleşide, öğrencilere ve genç profesyonellere veri bilimi ve endüstri mühendisliği alanlarında başarılı olmak için gerekli beceriler ve bilgiler hakkında değerli tavsiyeler sunulmaktadır.
 
 ## b) mtcars Veri Seti Üzerinde Çalışma
 
@@ -62,7 +65,9 @@ for(col in colnames(mtcars)) {
 sapply(mtcars, custom_summary)
 
 ```
+
 ## c) dslabs Veri Seti Üzerinde Çalışma
+
 ```{r}
 # dslabs paketinden na_example veri setini yükleme
 library(dslabs)
@@ -85,4 +90,5 @@ print(na_example_filled)
 ```
 
 ## Kaynaklar
-Açıklamalarımız burada olacak.
+
+Kod bloklarını oluştururken ders notlarını kullandık, oluşturduğumuz kodu optimize etmek amacıyla chatgpt'yi kullanıp kodumuzu optimize etmesini istedik, son oluşturulan kod blokları optimize edilmiş olanlardır.
