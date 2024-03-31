@@ -3,14 +3,86 @@ title: "Çalışma 1"
 ---
 
 \
-(Aşağıdakiler örnek olarak verilmiştir.)
 
-Bu çalışmada 3 görevimiz var. Bu görevler..... Bunlara sırayla aşağıda cevap arıyoruz.
+Bu çalışmada 3 görevimiz var. Bu görevlerde video özeti, mtcars Veri Seti Üzerinde Çalışma ve son olarak dslabs Veri Seti Üzerinde Çalışma yapmamız isteniyor. Bunlara sırayla aşağıdaki gibi cevaplamaktayız.
 
-## (a)
+# MÜY665 İş Analitiği - Ödev 1
+
+## a) Video Özeti
+
+Video özeti bölümünde grup olarak Baykal Hafızoğlu ve Erdi Daşdemir ile yapılan "Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler" videosu seçilmiştir. Seçilen bu videoya yönelik özet aşağıdaki gibi oluşturulmuştur.
+-Veri bilimi ve endüstri mühendisliği arasındaki ilişki, bu disiplinlerin geleceği ve öğrencilerin kariyer yollarını nasıl şekillendirebileceği üzerine sınıf ortamında öğrencilerin de katılımıyla online bir söyleşi yapılmıştır. 
+-Baykal Hafızoğlu ve Erdi Daşdemir hocamız, veri biliminin endüstri mühendisliği pratiğinde nasıl bir dönüşüm yarattığını ve bu alandaki yeni teknolojilerin iş dünyasına olan etkilerini ele almışlardır. 
+-Akademik ve profesyonel dünyada veri bilimine olan artan ilgiye değinilmiş ve bu trendin nedenleri üzerinde açıklamalarda bulunulmuştur. 
+-Söyleşide, öğrencilere ve genç profesyonellere veri bilimi ve endüstri mühendisliği alanlarında başarılı olmak için gerekli beceriler ve bilgiler hakkında değerli tavsiyeler sunmaktadır.
+
+
+## b) mtcars Veri Seti Üzerinde Çalışma
 
 ```{r}
-1 + 1
+# mtcars veri setini yükleme
+data(mtcars)
+
+# veri setini inceleyelim
+str(mtcars)
+head(mtcars)
+names(mtcars)
+
+
+# Özel Özet Fonksiyonu
+custom_summary <- function(vector) {
+  list(
+    Ortalama = mean(vector, na.rm = TRUE),
+    Medyan = median(vector, na.rm = TRUE),
+    Standart = sd(vector, na.rm = TRUE),
+    Minimum = min(vector, na.rm = TRUE),
+    Maksimum = max(vector, na.rm = TRUE)
+  )
+}
+
+# Fonksiyonun Çıktısını Düzenli Bir Şekilde Yazdırma
+print_custom_summary <- function(summary_list, col_name) {
+  cat(paste("\n", col_name, " İstatistikleri:\n", sep = ""))
+  cat(paste("Ortalama: ", summary_list$Ortalama, "\n"))
+  cat(paste("Medyan: ", summary_list$Medyan, "\n"))
+  cat(paste("Standart Sapma: ", summary_list$Standart, "\n"))
+  cat(paste("Minimum: ", summary_list$Minimum, "\n"))
+  cat(paste("Maksimum: ", summary_list$Maksimum, "\n"))
+}
+
+# Fonksiyonu Döngü Kullanarak Uygulama
+for(col in colnames(mtcars)) {
+  if(is.numeric(mtcars[[col]])) {
+    summary_list <- custom_summary(mtcars[[col]])
+    print_custom_summary(summary_list, col)
+  }
+}
+
+# apply ile Alternatif Bir Yaklaşım
+sapply(mtcars, custom_summary)
+
+```
+## c) dslabs Veri Seti Üzerinde Çalışma
+```{r}
+# dslabs paketinden na_example veri setini yükleme
+library(dslabs)
+data("na_example")
+
+# NA değerlerinin toplam sayısını belirleme
+total_na_before <- sum(is.na(na_example))
+cat("NA değerlerinin başlangıçtaki toplam sayısı:", total_na_before, "\n\n")
+cat("NA değerleri içeren orijinal veri seti:\n")
+print(na_example)
+
+# NA değerlerini 665 ile değiştirme
+na_example_filled <- replace(na_example, is.na(na_example), 665)
+
+# Güncellenmiş veri setinde 665 değerinin sayısını kontrol etme
+total_665 <- sum(na_example_filled == 665, na.rm = TRUE)
+cat("\nGüncellenmiş veri setinde 665 değerinin sayısı:", total_665, "\n\n")
+cat("665 ile değiştirilmiş NA değerlerini içeren güncellenmiş veri seti:\n")
+print(na_example_filled)
 ```
 
-## (b)
+## Kaynaklar
+Açıklamalarımız burada olacak.

@@ -192,8 +192,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#a" id="toc-a" class="nav-link active" data-scroll-target="#a">(a)</a></li>
-  <li><a href="#b" id="toc-b" class="nav-link" data-scroll-target="#b">(b)</a></li>
+  <li><a href="#müy665-iş-analitiği---ödev-1" id="toc-müy665-iş-analitiği---ödev-1" class="nav-link active" data-scroll-target="#müy665-iş-analitiği---ödev-1">MÜY665 İş Analitiği - Ödev 1</a>
+  <ul class="collapse">
+  <li><a href="#a-video-özeti" id="toc-a-video-özeti" class="nav-link" data-scroll-target="#a-video-özeti">a) Video Özeti</a></li>
+  <li><a href="#b-mtcars-veri-seti-üzerinde-çalışma" id="toc-b-mtcars-veri-seti-üzerinde-çalışma" class="nav-link" data-scroll-target="#b-mtcars-veri-seti-üzerinde-çalışma">b) mtcars Veri Seti Üzerinde Çalışma</a></li>
+  <li><a href="#c-dslabs-veri-seti-üzerinde-çalışma" id="toc-c-dslabs-veri-seti-üzerinde-çalışma" class="nav-link" data-scroll-target="#c-dslabs-veri-seti-üzerinde-çalışma">c) dslabs Veri Seti Üzerinde Çalışma</a></li>
+  <li><a href="#kaynaklar" id="toc-kaynaklar" class="nav-link" data-scroll-target="#kaynaklar">Kaynaklar</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -222,21 +227,319 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <p><br>
-(Aşağıdakiler örnek olarak verilmiştir.)</p>
-<p>Bu çalışmada 3 görevimiz var. Bu görevler….. Bunlara sırayla aşağıda cevap arıyoruz.</p>
-<section id="a" class="level2">
-<h2 class="anchored" data-anchor-id="a">(a)</h2>
+</p>
+<p>Bu çalışmada 3 görevimiz var. Bu görevlerde video özeti, mtcars Veri Seti Üzerinde Çalışma ve son olarak dslabs Veri Seti Üzerinde Çalışma yapmamız isteniyor. Bunlara sırayla aşağıdaki gibi cevaplamaktayız.</p>
+<section id="müy665-iş-analitiği---ödev-1" class="level1">
+<h1>MÜY665 İş Analitiği - Ödev 1</h1>
+<section id="a-video-özeti" class="level2">
+<h2 class="anchored" data-anchor-id="a-video-özeti">a) Video Özeti</h2>
+<p>Video özeti bölümünde grup olarak Baykal Hafızoğlu ve Erdi Daşdemir ile yapılan “Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler” videosu seçilmiştir. Seçilen bu videoya yönelik özet aşağıdaki gibi oluşturulmuştur. -Veri bilimi ve endüstri mühendisliği arasındaki ilişki, bu disiplinlerin geleceği ve öğrencilerin kariyer yollarını nasıl şekillendirebileceği üzerine sınıf ortamında öğrencilerin de katılımıyla online bir söyleşi yapılmıştır. -Baykal Hafızoğlu ve Erdi Daşdemir hocamız, veri biliminin endüstri mühendisliği pratiğinde nasıl bir dönüşüm yarattığını ve bu alandaki yeni teknolojilerin iş dünyasına olan etkilerini ele almışlardır. -Akademik ve profesyonel dünyada veri bilimine olan artan ilgiye değinilmiş ve bu trendin nedenleri üzerinde açıklamalarda bulunulmuştur. -Söyleşide, öğrencilere ve genç profesyonellere veri bilimi ve endüstri mühendisliği alanlarında başarılı olmak için gerekli beceriler ve bilgiler hakkında değerli tavsiyeler sunmaktadır.</p>
+</section>
+<section id="b-mtcars-veri-seti-üzerinde-çalışma" class="level2">
+<h2 class="anchored" data-anchor-id="b-mtcars-veri-seti-üzerinde-çalışma">b) mtcars Veri Seti Üzerinde Çalışma</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mtcars veri setini yükleme</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># veri setini inceleyelim</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>'data.frame':   32 obs. of  11 variables:
+ $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+ $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+ $ disp: num  160 160 108 258 360 ...
+ $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+ $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+ $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+ $ qsec: num  16.5 17 18.6 19.4 17 ...
+ $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+ $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+ $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+ $ carb: num  4 4 1 1 2 1 4 2 2 4 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "mpg"  "cyl"  "disp" "hp"   "drat" "wt"   "qsec" "vs"   "am"   "gear"
+[11] "carb"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Özel Özet Fonksiyonu</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>custom_summary <span class="ot">&lt;-</span> <span class="cf">function</span>(vector) {</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Ortalama =</span> <span class="fu">mean</span>(vector, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Medyan =</span> <span class="fu">median</span>(vector, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Standart =</span> <span class="fu">sd</span>(vector, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Minimum =</span> <span class="fu">min</span>(vector, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Maksimum =</span> <span class="fu">max</span>(vector, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Fonksiyonun Çıktısını Düzenli Bir Şekilde Yazdırma</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>print_custom_summary <span class="ot">&lt;-</span> <span class="cf">function</span>(summary_list, col_name) {</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, col_name, <span class="st">" İstatistikleri:</span><span class="sc">\n</span><span class="st">"</span>, <span class="at">sep =</span> <span class="st">""</span>))</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">"Ortalama: "</span>, summary_list<span class="sc">$</span>Ortalama, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">"Medyan: "</span>, summary_list<span class="sc">$</span>Medyan, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">"Standart Sapma: "</span>, summary_list<span class="sc">$</span>Standart, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">"Minimum: "</span>, summary_list<span class="sc">$</span>Minimum, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">"Maksimum: "</span>, summary_list<span class="sc">$</span>Maksimum, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Fonksiyonu Döngü Kullanarak Uygulama</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(col <span class="cf">in</span> <span class="fu">colnames</span>(mtcars)) {</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.numeric</span>(mtcars[[col]])) {</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    summary_list <span class="ot">&lt;-</span> <span class="fu">custom_summary</span>(mtcars[[col]])</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print_custom_summary</span>(summary_list, col)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+mpg İstatistikleri:
+Ortalama:  20.090625 
+Medyan:  19.2 
+Standart Sapma:  6.0269480520891 
+Minimum:  10.4 
+Maksimum:  33.9 
+
+cyl İstatistikleri:
+Ortalama:  6.1875 
+Medyan:  6 
+Standart Sapma:  1.78592164694654 
+Minimum:  4 
+Maksimum:  8 
+
+disp İstatistikleri:
+Ortalama:  230.721875 
+Medyan:  196.3 
+Standart Sapma:  123.938693831382 
+Minimum:  71.1 
+Maksimum:  472 
+
+hp İstatistikleri:
+Ortalama:  146.6875 
+Medyan:  123 
+Standart Sapma:  68.5628684893206 
+Minimum:  52 
+Maksimum:  335 
+
+drat İstatistikleri:
+Ortalama:  3.5965625 
+Medyan:  3.695 
+Standart Sapma:  0.534678736070971 
+Minimum:  2.76 
+Maksimum:  4.93 
+
+wt İstatistikleri:
+Ortalama:  3.21725 
+Medyan:  3.325 
+Standart Sapma:  0.978457442989697 
+Minimum:  1.513 
+Maksimum:  5.424 
+
+qsec İstatistikleri:
+Ortalama:  17.84875 
+Medyan:  17.71 
+Standart Sapma:  1.78694323609684 
+Minimum:  14.5 
+Maksimum:  22.9 
+
+vs İstatistikleri:
+Ortalama:  0.4375 
+Medyan:  0 
+Standart Sapma:  0.504016128774185 
+Minimum:  0 
+Maksimum:  1 
+
+am İstatistikleri:
+Ortalama:  0.40625 
+Medyan:  0 
+Standart Sapma:  0.498990917235846 
+Minimum:  0 
+Maksimum:  1 
+
+gear İstatistikleri:
+Ortalama:  3.6875 
+Medyan:  4 
+Standart Sapma:  0.737804065256947 
+Minimum:  3 
+Maksimum:  5 
+
+carb İstatistikleri:
+Ortalama:  2.8125 
+Medyan:  2 
+Standart Sapma:  1.61519997763185 
+Minimum:  1 
+Maksimum:  8 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># apply ile Alternatif Bir Yaklaşım</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(mtcars, custom_summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         mpg      cyl      disp     hp       drat      wt        qsec    
+Ortalama 20.09062 6.1875   230.7219 146.6875 3.596563  3.21725   17.84875
+Medyan   19.2     6        196.3    123      3.695     3.325     17.71   
+Standart 6.026948 1.785922 123.9387 68.56287 0.5346787 0.9784574 1.786943
+Minimum  10.4     4        71.1     52       2.76      1.513     14.5    
+Maksimum 33.9     8        472      335      4.93      5.424     22.9    
+         vs        am        gear      carb  
+Ortalama 0.4375    0.40625   3.6875    2.8125
+Medyan   0         0         4         2     
+Standart 0.5040161 0.4989909 0.7378041 1.6152
+Minimum  0         0         3         1     
+Maksimum 1         1         5         8     </code></pre>
 </div>
 </div>
 </section>
-<section id="b" class="level2">
-<h2 class="anchored" data-anchor-id="b">(b)</h2>
+<section id="c-dslabs-veri-seti-üzerinde-çalışma" class="level2">
+<h2 class="anchored" data-anchor-id="c-dslabs-veri-seti-üzerinde-çalışma">c) dslabs Veri Seti Üzerinde Çalışma</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dslabs paketinden na_example veri setini yükleme</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dslabs)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"na_example"</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># NA değerlerinin toplam sayısını belirleme</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>total_na_before <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(na_example))</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"NA değerlerinin başlangıçtaki toplam sayısı:"</span>, total_na_before, <span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NA değerlerinin başlangıçtaki toplam sayısı: 145 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"NA değerleri içeren orijinal veri seti:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NA değerleri içeren orijinal veri seti:</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(na_example)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   [1]  2  1  3  2  1  3  1  4  3  2  2 NA  2  2  1  4 NA  1  1  2  1  2  2  1
+  [25]  2  5 NA  2  2  3  1  2  4  1  1  1  4  5  2  3  4  1  2  4  1  1  2  1
+  [49]  5 NA NA NA  1  1  5  1  3  1 NA  4  4  7  3  2 NA NA  1 NA  4  1  2  2
+  [73]  3  2  1  2  2  4  3  4  2  3  1  3  2  1  1  1  3  1 NA  3  1  2  2  1
+  [97]  2  2  1  1  4  1  1  2  3  3  2  2  3  3  3  4  1  1  1  2 NA  4  3  4
+ [121]  3  1  2  1 NA NA NA NA  1  5  1  2  1  3  5  3  2  2 NA NA NA NA  3  5
+ [145]  3  1  1  4  2  4  3  3 NA  2  3  2  6 NA  1  1  2  2  1  3  1  1  5 NA
+ [169] NA  2  4 NA  2  5  1  4  3  3 NA  4  3  1  4  1  1  3  1  1 NA NA  3  5
+ [193]  2  2  2  3  1  2  2  3  2  1 NA  2 NA  1 NA NA  2  1  1 NA  3 NA  1  2
+ [217]  2  1  3  2  2  1  1  2  3  1  1  1  4  3  4  2  2  1  4  1 NA  5  1  4
+ [241] NA  3 NA NA  1  1  5  2  3  3  2  4 NA  3  2  5 NA  2  3  4  6  2  2  2
+ [265] NA  2 NA  2 NA  3  3  2  2  4  3  1  4  2 NA  2  4 NA  6  2  3  1 NA  2
+ [289]  2 NA  1  1  3  2  3  3  1 NA  1  4  2  1  1  3  2  1  2  3  1 NA  2  3
+ [313]  3  2  1  2  3  5  5  1  2  3  3  1 NA NA  1  2  4 NA  2  1  1  1  3  2
+ [337]  1  1  3  4 NA  1  2  1  1  3  3 NA  1  1  3  5  3  2  3  4  1  4  3  1
+ [361] NA  2  1  2  2  1  2  2  6  1  2  4  5 NA  3  4  2  1  1  4  2  1  1  1
+ [385]  1  2  1  4  4  1  3 NA  3  3 NA  2 NA  1  2  1  1  4  2  1  4  4 NA  1
+ [409]  2 NA  3  2  2  2  1  4  3  6  1  2  3  1  3  2  2  2  1  1  3  2  1  1
+ [433]  1  3  2  2 NA  4  4  4  1  1 NA  4  3 NA  1  3  1  3  2  4  2  2  2  3
+ [457]  2  1  4  3 NA  1  4  3  1  3  2 NA  3 NA  1  3  1  4  1  1  1  2  4  3
+ [481]  1  2  2  2  3  2  3  1  1 NA  3  2  1  1  2 NA  2  2  2  3  3  1  1  2
+ [505] NA  1  2  1  1  3  3  1  3  1  1  1  1  1  2  5  1  1  2  2  1  1 NA  1
+ [529]  4  1  2  4  1  3  2 NA  1  1 NA  2  1  1  4  2  3  3  1  5  3  1  1  2
+ [553] NA  1  1  3  1  3  2  4 NA  2  3  2  1  2  1  1  1  2  2  3  1  5  2 NA
+ [577]  2 NA  3  2  2  2  1  5  3  2  3  1 NA  3  1  2  2  2  1  2  2  4 NA  6
+ [601]  1  2 NA  1  1  2  2  3 NA  3  2  3  3  4  2 NA  2 NA  4 NA  1  1  2  2
+ [625]  3  1  1  1  3 NA  2  5 NA  7  1 NA  4  3  3  1 NA  1  1  1  1  3  2  4
+ [649]  2  2  3 NA NA  1  4  3  2  2  2  3  2  4  2  2  4 NA NA NA  6  3  3  1
+ [673]  4  4  2  1 NA  1  6 NA  3  3  2  1  1  6 NA  1  5  1 NA  2  6  2 NA  4
+ [697]  1  3  1  2 NA  1  1  3  1  2  4  2  1  3  2  4  3  2  2  1  1  5  6  4
+ [721]  2  2  2  2  4 NA  1  2  2  2  2  4  5 NA NA NA  4  3  3  3  2  4  2  4
+ [745] NA NA NA NA  2  1 NA  2  4  3  2 NA  2  3  1  3  4 NA  1  2  1  2 NA  3
+ [769]  1  2  1  2  1  2  1  2  2  2  2  1  1  3  3  1  3  4  3 NA NA  4  2  3
+ [793]  2  1  3  2  4  2  2  3  1  2  4  3  3  4 NA  1  4  2  1  1  1  3  1  5
+ [817]  2  2  4  2 NA  1  3  1  2 NA  1  2  1  2  1 NA  1  3  2  3  2 NA  2  1
+ [841]  4  2 NA NA NA  2  4  2 NA NA  3  1 NA  5  5  2  2  2 NA  2  1  3  1  3
+ [865]  2  4  2  4 NA  4  1  2  3  2  3  3  2  3  2  2  2  1  3  2  4  2 NA  3
+ [889]  3  2  2 NA NA  3  2  1  2  4  1  1  1  1  4  3  2 NA  3  2 NA  1 NA  3
+ [913]  2  1  1  1  2 NA  2  2  3  3  2 NA NA  4  5  2  2  2  1  2  3  1  3  3
+ [937]  4  3 NA  1  1  1 NA  4  3  5  1  1  2 NA  2  2  2  2  5  2  2  3  1  2
+ [961]  3 NA  1  2 NA NA  2 NA  3  1  1  2  5  3  5  1  1  4 NA  2  1  3  1  1
+ [985]  2  4  3  3  3 NA  1  1  2  2  1  1  2  2 NA  2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># NA değerlerini 665 ile değiştirme</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>na_example_filled <span class="ot">&lt;-</span> <span class="fu">replace</span>(na_example, <span class="fu">is.na</span>(na_example), <span class="dv">665</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Güncellenmiş veri setinde 665 değerinin sayısını kontrol etme</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>total_665 <span class="ot">&lt;-</span> <span class="fu">sum</span>(na_example_filled <span class="sc">==</span> <span class="dv">665</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Güncellenmiş veri setinde 665 değerinin sayısı:"</span>, total_665, <span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Güncellenmiş veri setinde 665 değerinin sayısı: 145 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"665 ile değiştirilmiş NA değerlerini içeren güncellenmiş veri seti:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>665 ile değiştirilmiş NA değerlerini içeren güncellenmiş veri seti:</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(na_example_filled)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   [1]   2   1   3   2   1   3   1   4   3   2   2 665   2   2   1   4 665   1
+  [19]   1   2   1   2   2   1   2   5 665   2   2   3   1   2   4   1   1   1
+  [37]   4   5   2   3   4   1   2   4   1   1   2   1   5 665 665 665   1   1
+  [55]   5   1   3   1 665   4   4   7   3   2 665 665   1 665   4   1   2   2
+  [73]   3   2   1   2   2   4   3   4   2   3   1   3   2   1   1   1   3   1
+  [91] 665   3   1   2   2   1   2   2   1   1   4   1   1   2   3   3   2   2
+ [109]   3   3   3   4   1   1   1   2 665   4   3   4   3   1   2   1 665 665
+ [127] 665 665   1   5   1   2   1   3   5   3   2   2 665 665 665 665   3   5
+ [145]   3   1   1   4   2   4   3   3 665   2   3   2   6 665   1   1   2   2
+ [163]   1   3   1   1   5 665 665   2   4 665   2   5   1   4   3   3 665   4
+ [181]   3   1   4   1   1   3   1   1 665 665   3   5   2   2   2   3   1   2
+ [199]   2   3   2   1 665   2 665   1 665 665   2   1   1 665   3 665   1   2
+ [217]   2   1   3   2   2   1   1   2   3   1   1   1   4   3   4   2   2   1
+ [235]   4   1 665   5   1   4 665   3 665 665   1   1   5   2   3   3   2   4
+ [253] 665   3   2   5 665   2   3   4   6   2   2   2 665   2 665   2 665   3
+ [271]   3   2   2   4   3   1   4   2 665   2   4 665   6   2   3   1 665   2
+ [289]   2 665   1   1   3   2   3   3   1 665   1   4   2   1   1   3   2   1
+ [307]   2   3   1 665   2   3   3   2   1   2   3   5   5   1   2   3   3   1
+ [325] 665 665   1   2   4 665   2   1   1   1   3   2   1   1   3   4 665   1
+ [343]   2   1   1   3   3 665   1   1   3   5   3   2   3   4   1   4   3   1
+ [361] 665   2   1   2   2   1   2   2   6   1   2   4   5 665   3   4   2   1
+ [379]   1   4   2   1   1   1   1   2   1   4   4   1   3 665   3   3 665   2
+ [397] 665   1   2   1   1   4   2   1   4   4 665   1   2 665   3   2   2   2
+ [415]   1   4   3   6   1   2   3   1   3   2   2   2   1   1   3   2   1   1
+ [433]   1   3   2   2 665   4   4   4   1   1 665   4   3 665   1   3   1   3
+ [451]   2   4   2   2   2   3   2   1   4   3 665   1   4   3   1   3   2 665
+ [469]   3 665   1   3   1   4   1   1   1   2   4   3   1   2   2   2   3   2
+ [487]   3   1   1 665   3   2   1   1   2 665   2   2   2   3   3   1   1   2
+ [505] 665   1   2   1   1   3   3   1   3   1   1   1   1   1   2   5   1   1
+ [523]   2   2   1   1 665   1   4   1   2   4   1   3   2 665   1   1 665   2
+ [541]   1   1   4   2   3   3   1   5   3   1   1   2 665   1   1   3   1   3
+ [559]   2   4 665   2   3   2   1   2   1   1   1   2   2   3   1   5   2 665
+ [577]   2 665   3   2   2   2   1   5   3   2   3   1 665   3   1   2   2   2
+ [595]   1   2   2   4 665   6   1   2 665   1   1   2   2   3 665   3   2   3
+ [613]   3   4   2 665   2 665   4 665   1   1   2   2   3   1   1   1   3 665
+ [631]   2   5 665   7   1 665   4   3   3   1 665   1   1   1   1   3   2   4
+ [649]   2   2   3 665 665   1   4   3   2   2   2   3   2   4   2   2   4 665
+ [667] 665 665   6   3   3   1   4   4   2   1 665   1   6 665   3   3   2   1
+ [685]   1   6 665   1   5   1 665   2   6   2 665   4   1   3   1   2 665   1
+ [703]   1   3   1   2   4   2   1   3   2   4   3   2   2   1   1   5   6   4
+ [721]   2   2   2   2   4 665   1   2   2   2   2   4   5 665 665 665   4   3
+ [739]   3   3   2   4   2   4 665 665 665 665   2   1 665   2   4   3   2 665
+ [757]   2   3   1   3   4 665   1   2   1   2 665   3   1   2   1   2   1   2
+ [775]   1   2   2   2   2   1   1   3   3   1   3   4   3 665 665   4   2   3
+ [793]   2   1   3   2   4   2   2   3   1   2   4   3   3   4 665   1   4   2
+ [811]   1   1   1   3   1   5   2   2   4   2 665   1   3   1   2 665   1   2
+ [829]   1   2   1 665   1   3   2   3   2 665   2   1   4   2 665 665 665   2
+ [847]   4   2 665 665   3   1 665   5   5   2   2   2 665   2   1   3   1   3
+ [865]   2   4   2   4 665   4   1   2   3   2   3   3   2   3   2   2   2   1
+ [883]   3   2   4   2 665   3   3   2   2 665 665   3   2   1   2   4   1   1
+ [901]   1   1   4   3   2 665   3   2 665   1 665   3   2   1   1   1   2 665
+ [919]   2   2   3   3   2 665 665   4   5   2   2   2   1   2   3   1   3   3
+ [937]   4   3 665   1   1   1 665   4   3   5   1   1   2 665   2   2   2   2
+ [955]   5   2   2   3   1   2   3 665   1   2 665 665   2 665   3   1   1   2
+ [973]   5   3   5   1   1   4 665   2   1   3   1   1   2   4   3   3   3 665
+ [991]   1   1   2   2   1   1   2   2 665   2</code></pre>
+</div>
+</div>
+</section>
+<section id="kaynaklar" class="level2">
+<h2 class="anchored" data-anchor-id="kaynaklar">Kaynaklar</h2>
+<p>Açıklamalarımız burada olacak.</p>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
