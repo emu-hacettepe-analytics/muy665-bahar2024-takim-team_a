@@ -35,7 +35,187 @@ xxxxxx
 
 # Analiz
 
-xxxxxx
+```{r}
+
+library(readxl)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+
+
+
+
+data <- read_excel("../muy665-bahar2024-takim-team_a/veri1.xls")  
+
+
+
+head(data)
+
+# Print the data to check the columns
+print(data)
+
+# Extract specific rows and columns
+# Extract years from the 4th row (columns 4 to 9 for years 2017 to 2022)
+years <- as.numeric(data[3, 2:8])
+
+# Extract total from 5th row (columns 4 to 9 for years 2017 to 2022)
+total <- as.numeric(data[4, 2:8])
+
+# Extract male from 6th row (columns 4 to 9 for years 2017 to 2022)
+male <- as.numeric(data[5, 2:8])
+
+# Extract female from 7th row (columns 4 to 9 for years 2017 to 2022)
+female <- as.numeric(data[6, 2:8])
+
+# Combine data into a data frame
+plot_data <- data.frame(
+  year = rep(years, 3),
+  score = c(total, male, female),
+  group = rep(c("Total", "Male", "Female"), each = length(years))
+)
+
+# Print the combined data to verify
+print(plot_data)
+
+
+# Create histograms for each year and each group
+ggplot(plot_data, aes(x = score, fill = group)) +
+  geom_histogram(binwidth = 0.1, position = "dodge") +
+  facet_wrap(~ year) +
+  labs(
+    title = "Scores Distribution by Year and Group",
+    x = "Score",
+    y = "Frequency",
+    fill = "Group"
+  ) +
+  theme_minimal()
+
+#yenisi ve en iyisi burada cinsiyete göre gittik
+# Combine data into a data frame
+plot_data <- data.frame(
+  year = rep(years, 3),
+  score = c(total, male, female),
+  group = rep(c("Total", "Male", "Female"), each = length(years))
+)
+
+# Print the combined data to verify
+print(plot_data)
+
+# Visualize data separated by years with x-axis as total, male, and female, and y-axis as percentage
+ggplot(plot_data, aes(x = group, y = score, fill = group)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~ year) +
+  labs(
+    title = "Scores by Year and Group",
+    x = "Group",
+    y = "Score",
+    fill = "Group"
+  ) +
+  theme_minimal()
+
+# Show trends for total, male, and female scores over the years
+ggplot(plot_data, aes(x = year, y = score, color = group)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Trend of Scores Over Years",
+    x = "Year",
+    y = "Score",
+    color = "Group"
+  ) +
+  theme_minimal()
+
+# Predict the values for the year 2024 using linear regression
+lm_total <- lm(score ~ year, data = plot_data %>% filter(group == "Total"))
+lm_male <- lm(score ~ year, data = plot_data %>% filter(group == "Male"))
+lm_female <- lm(score ~ year, data = plot_data %>% filter(group == "Female"))
+
+pred_2024 <- data.frame(
+  year = 2024,
+  group = c("Total", "Male", "Female"),
+  score = c(predict(lm_total, newdata = data.frame(year = 2024)),
+            predict(lm_male, newdata = data.frame(year = 2024)),
+            predict(lm_female, newdata = data.frame(year = 2024)))
+)
+
+# Print the predicted values for 2024
+print(pred_2024)
+
+# Add predictions to the plot data
+plot_data <- rbind(plot_data, pred_2024)
+
+# Show trends including predictions for 2024
+ggplot(plot_data, aes(x = year, y = score, color = group)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Trend of Scores Over Years (Including 2024 Prediction)",
+    x = "Year",
+    y = "Score",
+    color = "Group"
+  ) +
+  theme_minimal()
+
+
+
+#yaşlar için age grouping
+
+# Extract total from 5th row (columns 4 to 9 for years 2017 to 2022)
+eighteen_twentyfour <- as.numeric(data[8, 2:8])
+
+# Extract male from 6th row (columns 4 to 9 for years 2017 to 2022)
+twentyfour_thirtyfour <- as.numeric(data[9, 2:8])
+
+# Extract female from 7th row (columns 4 to 9 for years 2017 to 2022)
+thirtyfive_fourtyfour <- as.numeric(data[10, 2:8])
+
+# Extract female from 7th row (columns 4 to 9 for years 2017 to 2022)
+fourtyfive_fiftyfour <- as.numeric(data[11, 2:8])
+
+# Extract female from 7th row (columns 4 to 9 for years 2017 to 2022)
+fiftyfive_sixtyfour <- as.numeric(data[12, 2:8])
+
+# Extract female from 7th row (columns 4 to 9 for years 2017 to 2022)
+sixtyfive_plus <- as.numeric(data[13, 2:8])
+
+# Combine data into a data frame
+plot_data <- data.frame(
+  year = rep(years, 6),
+  score = c(eighteen_twentyfour, twentyfour_thirtyfour, thirtyfive_fourtyfour, fourtyfive_fiftyfour, fiftyfive_sixtyfour, sixtyfive_plus),
+  group = rep(c("eighteen_twentyfour", "twentyfour_thirtyfour", "thirtyfive_fourtyfour", "fourtyfive_fiftyfour", "fiftyfive_sixtyfour", "sixtyfive_plus"), each = length(years))
+)
+
+# Print the combined data to verify
+print(plot_data)
+
+
+# Visualize data separated by years with x-axis as total, male, and female, and y-axis as percentage
+ggplot(plot_data, aes(x = group, y = score, fill = group)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~ year) +
+  labs(
+    title = "Scores by Year and Group",
+    x = "Group",
+    y = "Score",
+    fill = "Group"
+  ) +
+  theme_minimal()
+
+# Show trends for total, male, and female scores over the years
+ggplot(plot_data, aes(x = year, y = score, color = group)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Trend of Scores Over Years",
+    x = "Year",
+    y = "Score",
+    color = "Group"
+  ) +
+  theme_minimal()
+
+#
+
+```
 
 ## Keşifsel Veri Analizi
 
