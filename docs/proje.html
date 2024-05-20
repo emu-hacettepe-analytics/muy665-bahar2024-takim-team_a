@@ -553,7 +553,402 @@ Attaching package: 'dplyr'</code></pre>
 <div class="cell-output-display">
 <p><img src="proje_files/figure-html/unnamed-chunk-1-6.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># yeni veriseti mutluluk kaynağı değeri olanlar</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># yeni veriseti mutluluk kaynağı değeri olanlar</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># yeni veriseti mutluluk kaynağı değeri olanlar</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>data1 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"../muy665-bahar2024-takim-team_a/veri2.xls"</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+• `` -&gt; `...2`
+• `` -&gt; `...3`
+• `` -&gt; `...4`
+• `` -&gt; `...5`
+• `` -&gt; `...6`
+• `` -&gt; `...7`
+• `` -&gt; `...8`
+• `` -&gt; `...9`
+• `` -&gt; `...10`
+• `` -&gt; `...11`
+• `` -&gt; `...12`
+• `` -&gt; `...13`</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 13
+  Mutluluk kaynağı, 201…¹ ...2    ...3   ...4   ...5   ...6   ...7   ...8   ...9
+  &lt;chr&gt;                   &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+1 "Source of happiness, … &lt;NA&gt;    NA     NA     NA     NA     NA     NA     NA  
+2  &lt;NA&gt;                   &lt;NA&gt;    NA     NA     NA     NA     NA     NA     NA  
+3  &lt;NA&gt;                   &lt;NA&gt;  2013   2014   2015   2016   2017   2018   2019  
+4 "Mutluluk kaynağı olan… &lt;NA&gt;    NA     NA     NA     NA     NA     NA     NA  
+5  &lt;NA&gt;                   Tüm …   73     73.3   72.3   70.2   70.6   74.2   74.1
+6  &lt;NA&gt;                   Çocu…   12.9   13.4   13.1   15.1   14.3   12.9   12.8
+# ℹ abbreviated name: ¹​`Mutluluk kaynağı, 2013-2023`
+# ℹ 4 more variables: ...10 &lt;dbl&gt;, ...11 &lt;dbl&gt;, ...12 &lt;dbl&gt;, ...13 &lt;chr&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the data to check the columns</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(data1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 22 × 13
+   Mutluluk kaynağı, 2013-…¹ ...2    ...3   ...4    ...5    ...6    ...7    ...8
+   &lt;chr&gt;                     &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+ 1 "Source of happiness, 20… &lt;NA&gt;    NA     NA     NA      NA      NA      NA   
+ 2  &lt;NA&gt;                     &lt;NA&gt;    NA     NA     NA      NA      NA      NA   
+ 3  &lt;NA&gt;                     &lt;NA&gt;  2013   2014   2015    2016    2017    2018   
+ 4 "Mutluluk kaynağı olan k… &lt;NA&gt;    NA     NA     NA      NA      NA      NA   
+ 5  &lt;NA&gt;                     Tüm …   73     73.3   72.3    70.2    70.6    74.2 
+ 6  &lt;NA&gt;                     Çocu…   12.9   13.4   13.1    15.1    14.3    12.9 
+ 7  &lt;NA&gt;                     Eş-S…    5.2    5      5.31    4.73    5.35    3.62
+ 8  &lt;NA&gt;                     Anne…    2.9    3.1    2.76    3.64    3.19    2.73
+ 9  &lt;NA&gt;                     Kend…    2.5    1.9    2.75    2.71    3.42    3.33
+10  &lt;NA&gt;                     Toru…    1.7    1.4    1.88    1.92    1.89    1.82
+# ℹ 12 more rows
+# ℹ abbreviated name: ¹​`Mutluluk kaynağı, 2013-2023`
+# ℹ 5 more variables: ...9 &lt;dbl&gt;, ...10 &lt;dbl&gt;, ...11 &lt;dbl&gt;, ...12 &lt;dbl&gt;,
+#   ...13 &lt;chr&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract years from the 4th row (columns 4 to 9 for years 2017 to 2022)</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>years1 <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data1[<span class="dv">3</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">13</span>])</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract total from 5th row (columns 4 to 9 for years 2017 to 2022)</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>saglık <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data1[<span class="dv">13</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">13</span>])</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract male from 6th row (columns 4 to 9 for years 2017 to 2022)</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>sevgi <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data1[<span class="dv">14</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">13</span>])</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract female from 7th row (columns 4 to 9 for years 2017 to 2022)</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>basarı <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data1[<span class="dv">15</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">13</span>])</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract total from 5th row (columns 4 to 9 for years 2017 to 2022)</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>para <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data1[<span class="dv">16</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">13</span>])</span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract male from 6th row (columns 4 to 9 for years 2017 to 2022)</span></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>is <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data1[<span class="dv">17</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">13</span>])</span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract female from 7th row (columns 4 to 9 for years 2017 to 2022)</span></span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>diger <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data1[<span class="dv">18</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">13</span>])</span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(years1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract years for years 2013 to 2023</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>years1 <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data1[<span class="dv">3</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">13</span>])</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract health for years 2013 to 2023</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>saglik <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data1[<span class="dv">13</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">13</span>])</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract love for years 2013 to 2023</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>sevgi <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data1[<span class="dv">14</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">13</span>])</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract success for years 2013 to 2023</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>basari <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data1[<span class="dv">15</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">13</span>])</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract money for years 2013 to 2023</span></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>para <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data1[<span class="dv">16</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">13</span>])</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract job for years 2013 to 2023</span></span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>is <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data1[<span class="dv">17</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">13</span>])</span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract other for years 2013 to 2023</span></span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>diger <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data1[<span class="dv">18</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">13</span>])</span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a><span class="co">#yeni kısım</span></span>
+<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a long-format data frame</span></span>
+<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">year =</span> <span class="fu">rep</span>(years1, <span class="dv">6</span>),</span>
+<span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">topic =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Health"</span>, <span class="st">"Love"</span>, <span class="st">"Success"</span>, <span class="st">"Money"</span>, <span class="st">"Job"</span>, <span class="st">"Other"</span>), <span class="at">each =</span> <span class="fu">length</span>(years1)),</span>
+<span id="cb33-28"><a href="#cb33-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="fu">c</span>(saglik, sevgi, basari, para, is, diger)</span>
+<span id="cb33-29"><a href="#cb33-29" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb33-30"><a href="#cb33-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-31"><a href="#cb33-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the combined data to verify</span></span>
+<span id="cb33-32"><a href="#cb33-32" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   year   topic      value
+1  2013  Health 68.0000000
+2  2014  Health 68.8000000
+3  2015  Health 68.7530000
+4  2016  Health 72.1380000
+5  2017  Health 68.0179285
+6  2018  Health 68.9990000
+7  2019  Health 69.8648423
+8  2020  Health 70.8584691
+9  2021  Health 68.9505817
+10 2022  Health 68.1679400
+11 2023  Health 69.4519821
+12 2013    Love 15.2000000
+13 2014    Love 15.4000000
+14 2015    Love 15.7640000
+15 2016    Love 14.5910000
+16 2017    Love 16.5642914
+17 2018    Love 15.5418000
+18 2019    Love 14.3171221
+19 2020    Love 12.7836121
+20 2021    Love 14.3428574
+21 2022    Love 13.1965900
+22 2023    Love 13.2200296
+23 2013 Success  8.6000000
+24 2014 Success  8.5000000
+25 2015 Success  8.5580000
+26 2016 Success  6.9950000
+27 2017 Success  8.9768234
+28 2018 Success  8.8152000
+29 2019 Success  9.1735485
+30 2020 Success  8.8100069
+31 2021 Success  8.9268787
+32 2022 Success  9.5298010
+33 2023 Success  9.2084356
+34 2013   Money  4.1000000
+35 2014   Money  4.2000000
+36 2015   Money  3.8790000
+37 2016   Money  3.1640000
+38 2017   Money  3.9045409
+39 2018   Money  4.1962900
+40 2019   Money  4.1612886
+41 2020   Money  4.5950137
+42 2021   Money  5.0980588
+43 2022   Money  6.1699240
+44 2023   Money  5.3248059
+45 2013     Job  2.3000000
+46 2014     Job  2.2000000
+47 2015     Job  2.0280000
+48 2016     Job  2.2990000
+49 2017     Job  1.8975148
+50 2018     Job  2.2394900
+51 2019     Job  2.1347070
+52 2020     Job  2.2580617
+53 2021     Job  2.2815553
+54 2022     Job  2.6397800
+55 2023     Job  2.6406056
+56 2013   Other  1.8000000
+57 2014   Other  0.9000000
+58 2015   Other  1.0180000
+59 2016   Other  0.8130000
+60 2017   Other  0.6389012
+61 2018   Other  0.2082200
+62 2019   Other  0.3484915
+63 2020   Other  0.6948366
+64 2021   Other  0.4000681
+65 2022   Other  0.2959660
+66 2023   Other  0.1541411</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to create pie chart for a specific year with percentage labels</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>create_pie_chart <span class="ot">&lt;-</span> <span class="cf">function</span>(year_data) {</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  year_data <span class="ot">&lt;-</span> year_data <span class="sc">%&gt;%</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">percentage =</span> value <span class="sc">/</span> <span class="fu">sum</span>(value) <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">label =</span> <span class="fu">paste0</span>(topic, <span class="st">": "</span>, <span class="fu">round</span>(percentage, <span class="dv">1</span>), <span class="st">"%"</span>))</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(year_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> value, <span class="at">fill =</span> topic)) <span class="sc">+</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">width =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_polar</span>(<span class="at">theta =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Distribution of Topics in"</span>, <span class="fu">unique</span>(year_data<span class="sc">$</span>year)),</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="st">"Topic"</span>) <span class="sc">+</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> label), <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop through each year and create pie charts</span></span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (year <span class="cf">in</span> <span class="fu">unique</span>(plot_data<span class="sc">$</span>year)) {</span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>  year_data <span class="ot">&lt;-</span> plot_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="sc">!!</span>year)</span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>  pie_chart <span class="ot">&lt;-</span> <span class="fu">create_pie_chart</span>(year_data)</span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(pie_chart)</span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-7.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-8.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-9.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-10.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-11.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-12.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-13.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-14.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-15.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-16.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-17.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show line plots for each topic to visualize changes over the years</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_data, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> value, <span class="at">color =</span> topic)) <span class="sc">+</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Trends of Topics Over Years"</span>,</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Value"</span>,</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Topic"</span></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-18.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">#düzenlenmiş hali</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the combined data to verify</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   year   topic      value
+1  2013  Health 68.0000000
+2  2014  Health 68.8000000
+3  2015  Health 68.7530000
+4  2016  Health 72.1380000
+5  2017  Health 68.0179285
+6  2018  Health 68.9990000
+7  2019  Health 69.8648423
+8  2020  Health 70.8584691
+9  2021  Health 68.9505817
+10 2022  Health 68.1679400
+11 2023  Health 69.4519821
+12 2013    Love 15.2000000
+13 2014    Love 15.4000000
+14 2015    Love 15.7640000
+15 2016    Love 14.5910000
+16 2017    Love 16.5642914
+17 2018    Love 15.5418000
+18 2019    Love 14.3171221
+19 2020    Love 12.7836121
+20 2021    Love 14.3428574
+21 2022    Love 13.1965900
+22 2023    Love 13.2200296
+23 2013 Success  8.6000000
+24 2014 Success  8.5000000
+25 2015 Success  8.5580000
+26 2016 Success  6.9950000
+27 2017 Success  8.9768234
+28 2018 Success  8.8152000
+29 2019 Success  9.1735485
+30 2020 Success  8.8100069
+31 2021 Success  8.9268787
+32 2022 Success  9.5298010
+33 2023 Success  9.2084356
+34 2013   Money  4.1000000
+35 2014   Money  4.2000000
+36 2015   Money  3.8790000
+37 2016   Money  3.1640000
+38 2017   Money  3.9045409
+39 2018   Money  4.1962900
+40 2019   Money  4.1612886
+41 2020   Money  4.5950137
+42 2021   Money  5.0980588
+43 2022   Money  6.1699240
+44 2023   Money  5.3248059
+45 2013     Job  2.3000000
+46 2014     Job  2.2000000
+47 2015     Job  2.0280000
+48 2016     Job  2.2990000
+49 2017     Job  1.8975148
+50 2018     Job  2.2394900
+51 2019     Job  2.1347070
+52 2020     Job  2.2580617
+53 2021     Job  2.2815553
+54 2022     Job  2.6397800
+55 2023     Job  2.6406056
+56 2013   Other  1.8000000
+57 2014   Other  0.9000000
+58 2015   Other  1.0180000
+59 2016   Other  0.8130000
+60 2017   Other  0.6389012
+61 2018   Other  0.2082200
+62 2019   Other  0.3484915
+63 2020   Other  0.6948366
+64 2021   Other  0.4000681
+65 2022   Other  0.2959660
+66 2023   Other  0.1541411</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to create pie chart for a specific year with percentage labels</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>create_pie_chart <span class="ot">&lt;-</span> <span class="cf">function</span>(year_data) {</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  year_data <span class="ot">&lt;-</span> year_data <span class="sc">%&gt;%</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">percentage =</span> value <span class="sc">/</span> <span class="fu">sum</span>(value) <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">label =</span> <span class="fu">paste0</span>(topic, <span class="st">": "</span>, <span class="fu">round</span>(percentage, <span class="dv">1</span>), <span class="st">"%"</span>))</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(year_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> value, <span class="at">fill =</span> topic)) <span class="sc">+</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">width =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_polar</span>(<span class="at">theta =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Distribution of Topics in"</span>, <span class="fu">unique</span>(year_data<span class="sc">$</span>year)),</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="st">"Topic"</span>) <span class="sc">+</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> label), <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">ncol =</span> <span class="dv">2</span>))</span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop through each year and create pie charts</span></span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (year <span class="cf">in</span> <span class="fu">unique</span>(plot_data<span class="sc">$</span>year)) {</span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>  year_data <span class="ot">&lt;-</span> plot_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="sc">!!</span>year)</span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>  pie_chart <span class="ot">&lt;-</span> <span class="fu">create_pie_chart</span>(year_data)</span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(pie_chart)</span>
+<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-19.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-20.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-21.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-22.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-23.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-24.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-25.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-26.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-27.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-28.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-29.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show line plots for each topic to visualize changes over the years</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_data, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> value, <span class="at">color =</span> topic)) <span class="sc">+</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> years1) <span class="sc">+</span>  <span class="co"># Ensure x-axis shows only whole years</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Trends of Topics Over Years"</span>,</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Value"</span>,</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Topic"</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="proje_files/figure-html/unnamed-chunk-1-30.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Veri kısmı</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># veri</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="keşifsel-veri-analizi" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="keşifsel-veri-analizi"><span class="header-section-number">3.1</span> Keşifsel Veri Analizi</h2>

@@ -213,7 +213,152 @@ ggplot(plot_data, aes(x = year, y = score, color = group)) +
   ) +
   theme_minimal()
 
-#
+# yeni veriseti mutluluk kaynağı değeri olanlar
+# yeni veriseti mutluluk kaynağı değeri olanlar
+# yeni veriseti mutluluk kaynağı değeri olanlar
+data1 <- read_excel("../muy665-bahar2024-takim-team_a/veri2.xls")  
+
+head(data1)
+
+# Print the data to check the columns
+print(data1)
+
+# Extract years from the 4th row (columns 4 to 9 for years 2017 to 2022)
+years1 <- as.numeric(data1[3, 3:13])
+
+# Extract total from 5th row (columns 4 to 9 for years 2017 to 2022)
+saglık <- as.numeric(data1[13, 3:13])
+
+# Extract male from 6th row (columns 4 to 9 for years 2017 to 2022)
+sevgi <- as.numeric(data1[14, 3:13])
+
+# Extract female from 7th row (columns 4 to 9 for years 2017 to 2022)
+basarı <- as.numeric(data1[15, 3:13])
+
+# Extract total from 5th row (columns 4 to 9 for years 2017 to 2022)
+para <- as.numeric(data1[16, 3:13])
+
+# Extract male from 6th row (columns 4 to 9 for years 2017 to 2022)
+is <- as.numeric(data1[17, 3:13])
+
+# Extract female from 7th row (columns 4 to 9 for years 2017 to 2022)
+diger <- as.numeric(data1[18, 3:13])
+
+print(years1)
+
+
+# Extract years for years 2013 to 2023
+years1 <- as.numeric(data1[3, 3:13])
+
+# Extract health for years 2013 to 2023
+saglik <- as.numeric(data1[13, 3:13])
+
+# Extract love for years 2013 to 2023
+sevgi <- as.numeric(data1[14, 3:13])
+
+# Extract success for years 2013 to 2023
+basari <- as.numeric(data1[15, 3:13])
+
+# Extract money for years 2013 to 2023
+para <- as.numeric(data1[16, 3:13])
+
+# Extract job for years 2013 to 2023
+is <- as.numeric(data1[17, 3:13])
+
+# Extract other for years 2013 to 2023
+diger <- as.numeric(data1[18, 3:13])
+
+
+#yeni kısım
+# Create a long-format data frame
+plot_data <- data.frame(
+  year = rep(years1, 6),
+  topic = rep(c("Health", "Love", "Success", "Money", "Job", "Other"), each = length(years1)),
+  value = c(saglik, sevgi, basari, para, is, diger)
+)
+
+# Print the combined data to verify
+print(plot_data)
+
+# Function to create pie chart for a specific year with percentage labels
+create_pie_chart <- function(year_data) {
+  year_data <- year_data %>%
+    mutate(percentage = value / sum(value) * 100) %>%
+    mutate(label = paste0(topic, ": ", round(percentage, 1), "%"))
+  
+  ggplot(year_data, aes(x = "", y = value, fill = topic)) +
+    geom_bar(stat = "identity", width = 1) +
+    coord_polar(theta = "y") +
+    labs(title = paste("Distribution of Topics in", unique(year_data$year)),
+         x = NULL, y = NULL, fill = "Topic") +
+    theme_void() +
+    theme(legend.position = "bottom") +
+    geom_text(aes(label = label), position = position_stack(vjust = 0.5))
+}
+
+# Loop through each year and create pie charts
+for (year in unique(plot_data$year)) {
+  year_data <- plot_data %>% filter(year == !!year)
+  pie_chart <- create_pie_chart(year_data)
+  print(pie_chart)
+}
+
+# Show line plots for each topic to visualize changes over the years
+ggplot(plot_data, aes(x = year, y = value, color = topic)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Trends of Topics Over Years",
+    x = "Year",
+    y = "Value",
+    color = "Topic"
+  ) +
+  theme_minimal()
+#düzenlenmiş hali
+
+
+# Print the combined data to verify
+print(plot_data)
+
+# Function to create pie chart for a specific year with percentage labels
+create_pie_chart <- function(year_data) {
+  year_data <- year_data %>%
+    mutate(percentage = value / sum(value) * 100) %>%
+    mutate(label = paste0(topic, ": ", round(percentage, 1), "%"))
+  
+  ggplot(year_data, aes(x = "", y = value, fill = topic)) +
+    geom_bar(stat = "identity", width = 1) +
+    coord_polar(theta = "y") +
+    labs(title = paste("Distribution of Topics in", unique(year_data$year)),
+         x = NULL, y = NULL, fill = "Topic") +
+    theme_void() +
+    theme(legend.position = "bottom") +
+    geom_text(aes(label = label), position = position_stack(vjust = 0.5), size = 3) +
+    guides(fill = guide_legend(ncol = 2))
+}
+
+# Loop through each year and create pie charts
+for (year in unique(plot_data$year)) {
+  year_data <- plot_data %>% filter(year == !!year)
+  pie_chart <- create_pie_chart(year_data)
+  print(pie_chart)
+}
+
+# Show line plots for each topic to visualize changes over the years
+ggplot(plot_data, aes(x = year, y = value, color = topic)) +
+  geom_line() +
+  geom_point() +
+  scale_x_continuous(breaks = years1) +  # Ensure x-axis shows only whole years
+  labs(
+    title = "Trends of Topics Over Years",
+    x = "Year",
+    y = "Value",
+    color = "Topic"
+  ) +
+  theme_minimal()
+
+# Veri kısmı
+# veri
 
 ```
 
