@@ -25,14 +25,16 @@ Lütfen faaliyetlerimizi görmek için için bizi takipte kalın.
 
 ## Proje Adı
 
-MUY660-İş Analitiği iyileştirme çalışmaları (örnek)
+İnsanların Mutluluk Kaynakları Ve Oranları
 
 ## Proje Konusu
 
-Örnek: Bu projede MUY660-İş Analitiği ders içeriğinin analitik yaklaşımlarla iyileştirilmesini hedefledik. Bu doğrultuda tüm üniversitelerdeki benzer derslerin verisini toplayarak bir veri seti oluşturduk Analiz için ........ yöntemleri kullanarak, ....... çalışmaları yaptık Sonuç olarak, MUY660-İş Analitiği dersinin dünyadaki tüm derslerden daha iyi olduğunu ve bu dersi aldığımız için çok mutlu olduğumuzu tespit ettik.
+Bu projede MUY665-İş Analitiği ders içeriğinin analitik yaklaşımlarla iyileştirilmesini hedefledik. Analiz için veri görselleştirme yöntemleri kullanarak, veriler üzerine çalışmalar yaptık. Sonuç olarak, MUY660-İş Analitiği dersinin dünyadaki tüm derslerden daha iyi olduğunu ve bu dersi aldığımız için çok mutlu olduğumuzu tespit ettik. :)
 
 ## Veri Seti Hakkında Özet Bilgi
 
+Bu proje, yıllar 2013'ten 2023'e kadar olan mutluluk oranlarını çeşitli kategorilere göre analiz etmeyi ve önümüzdeki yıllar için tahminler yapmayı amaçlamaktadır. Çalışmanın temel amacı, toplumun genel mutluluk seviyesini etkileyen faktörleri anlamak ve gelecekteki trendleri öngörmektir.
+
 ## Sonuçlar
 
-Burada key takeways verilmelidir. En az 3 en fazla 5 madde ile çarpıcı sonuçlar sunulmalıdır.
+Analiz sonuçlarına göre, mutluluk skorlarındaki değişimler ve bu değişimlerin potansiyel nedenleri tartışılmıştır. Ayrıca, 2024 yılı için yapılan tahminler paylaşılmıştır.

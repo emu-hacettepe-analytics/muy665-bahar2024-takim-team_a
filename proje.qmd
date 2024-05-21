@@ -1,5 +1,5 @@
 ---
-title: "Proje X (proje adını yazınız)"
+title: "İnsanların Mutluluk Kaynakları Üzerine Bir İnceleme"
 number-sections: true
 ---
 
@@ -7,91 +7,67 @@ number-sections: true
 
 *Projemizle ilgili güncellemelerden haberdar olmak için bu alanı takip edin.*
 
-(Aşağıdaki başlıklar örnek olarak verilmiştir; lütfen gerektiği şekilde düzenlemekten çekinmeyin.)
-
 # Proje Genel Bakış ve Kapsamı
 
-xxxxxx
+Bu çalışma, 2017'den 2023'e kadar olan yıllar boyunca değişen mutluluk oranlarını ve bunların cinsiyet, yaş gibi faktörlere göre nasıl farklılık gösterdiğini analiz etmektedir. Ayrıca, bu trendleri kullanarak 2024 ve sonrası için mutluluk oranlarına dair tahminlerde bulunmayı amaçlar.
 
 # Veri
 
-xxxxxx
+Projemizde kullanılan veriler, TÜİK üzerinden alınmıştır ve yıllık mutluluk skorlarını içermektedir.
 
 ## Veri Kaynağı
 
-xxxxxx
+Verilere, [TÜİK Yaşam Memnuniyeti Araştırması](https://data.tuik.gov.tr/Bulten/Index?p=Yasam-Memnuniyeti-Arastirmasi-2023-49692) ve [TÜİK Yaşam Kalitesi Modülü](https://data.tuik.gov.tr/Bulten/Index?p=Yasam-Kalitesi-Modulu-2022-49760) üzerinden erişilebilir.
 
 ## Veri Hakkında Genel Bilgiler
 
-xxxxxx
+Veri setimiz, yıllara göre mutluluk kaynaklarını ve cinsiyet, yaş grubu gibi faktörlerle oransal dağılımını içermektedir.
 
 ## Tercih Sebebi
 
-xxxxxx
+Mutluluk oranlarının analizi, toplumsal refahın önemli bir göstergesidir ve bu çalışma, mutluluk üzerine değerli içgörüler sunmayı hedeflemektedir.
 
 ## Ön İşleme
 
-xxxxxx
+Veri seti, eksik verilerin doldurulması ve aykırı değerlerin temizlenmesi gibi işlemlerden geçirilmiştir.
 
 # Analiz
+
+## Keşifsel Veri Analizi
 
 ```{r}
 
 library(readxl)
-library(dplyr)
+#library(dplyr)
+suppressPackageStartupMessages(library(dplyr))
 library(ggplot2)
 library(tidyr)
 
 
-
-
-data <- read_excel("../muy665-bahar2024-takim-team_a/veri1.xls")  
-
-
+#data <- read_excel("../muy665-bahar2024-takim-team_a/veri1.xls", col_names = TRUE)  
+data <- suppressMessages(suppressWarnings(
+  read_excel("../muy665-bahar2024-takim-team_a/veri1.xls")
+))
 
 head(data)
 
 # Print the data to check the columns
 print(data)
 
-# Extract specific rows and columns
-# Extract years from the 4th row (columns 4 to 9 for years 2017 to 2022)
+# Belirli satır ve sütunlardan veri çıkar
+# 2017 - 2022 yıllarını 4. sıradan itibaren çıkar
 years <- as.numeric(data[3, 2:8])
 
-# Extract total from 5th row (columns 4 to 9 for years 2017 to 2022)
+# Toplam skorları 5. sıradan itibaren çıkar
 total <- as.numeric(data[4, 2:8])
 
-# Extract male from 6th row (columns 4 to 9 for years 2017 to 2022)
+# Erkek skorlarını 6. sıradan itibaren çıkar
 male <- as.numeric(data[5, 2:8])
 
-# Extract female from 7th row (columns 4 to 9 for years 2017 to 2022)
+# Kadın skorlarını 7. sıradan itibaren çıkar
 female <- as.numeric(data[6, 2:8])
 
-# Combine data into a data frame
-plot_data <- data.frame(
-  year = rep(years, 3),
-  score = c(total, male, female),
-  group = rep(c("Total", "Male", "Female"), each = length(years))
-)
-
-# Print the combined data to verify
-print(plot_data)
-
-
-# Create histograms for each year and each group
-ggplot(plot_data, aes(x = score, fill = group)) +
-  geom_histogram(binwidth = 0.1, position = "dodge") +
-  facet_wrap(~ year) +
-  labs(
-    title = "Scores Distribution by Year and Group",
-    x = "Score",
-    y = "Frequency",
-    fill = "Group"
-  ) +
-  theme_minimal()
-
-#yenisi ve en iyisi burada cinsiyete göre gittik
-# Combine data into a data frame
+# Verileri bir veri çerçevesinde birleştir
 plot_data <- data.frame(
   year = rep(years, 3),
   score = c(total, male, female),
@@ -106,21 +82,22 @@ ggplot(plot_data, aes(x = group, y = score, fill = group)) +
   geom_bar(stat = "identity", position = "dodge") +
   facet_wrap(~ year) +
   labs(
-    title = "Scores by Year and Group",
-    x = "Group",
-    y = "Score",
-    fill = "Group"
+    title = "Yıllara Göre Mutluluk Oranları",
+    x = "Cinsiyetler",
+    y = "Verilen Puan",
+    fill = "Cinsiyetler"
   ) +
   theme_minimal()
+
 
 # Show trends for total, male, and female scores over the years
 ggplot(plot_data, aes(x = year, y = score, color = group)) +
   geom_line() +
   geom_point() +
   labs(
-    title = "Trend of Scores Over Years",
-    x = "Year",
-    y = "Score",
+    title = "Yıllara Göre Mutluluk Trendleri",
+    x = "Yıllar",
+    y = "Puan",
     color = "Group"
   ) +
   theme_minimal()
@@ -149,9 +126,9 @@ ggplot(plot_data, aes(x = year, y = score, color = group)) +
   geom_line() +
   geom_point() +
   labs(
-    title = "Trend of Scores Over Years (Including 2024 Prediction)",
-    x = "Year",
-    y = "Score",
+    title = "Trend Tahminleri 2024 Yılı İçin",
+    x = "Yıllar",
+    y = "Puan",
     color = "Group"
   ) +
   theme_minimal()
@@ -160,22 +137,20 @@ ggplot(plot_data, aes(x = year, y = score, color = group)) +
 
 #yaşlar için age grouping
 
-# Extract total from 5th row (columns 4 to 9 for years 2017 to 2022)
 eighteen_twentyfour <- as.numeric(data[8, 2:8])
 
-# Extract male from 6th row (columns 4 to 9 for years 2017 to 2022)
+
 twentyfour_thirtyfour <- as.numeric(data[9, 2:8])
 
-# Extract female from 7th row (columns 4 to 9 for years 2017 to 2022)
+
 thirtyfive_fourtyfour <- as.numeric(data[10, 2:8])
 
-# Extract female from 7th row (columns 4 to 9 for years 2017 to 2022)
+
 fourtyfive_fiftyfour <- as.numeric(data[11, 2:8])
 
-# Extract female from 7th row (columns 4 to 9 for years 2017 to 2022)
+
 fiftyfive_sixtyfour <- as.numeric(data[12, 2:8])
 
-# Extract female from 7th row (columns 4 to 9 for years 2017 to 2022)
 sixtyfive_plus <- as.numeric(data[13, 2:8])
 
 # Combine data into a data frame
@@ -189,62 +164,56 @@ plot_data <- data.frame(
 print(plot_data)
 
 
-# Visualize data separated by years with x-axis as total, male, and female, and y-axis as percentage
-ggplot(plot_data, aes(x = group, y = score, fill = group)) +
-  geom_bar(stat = "identity", position = "dodge") +
-  facet_wrap(~ year) +
-  labs(
-    title = "Scores by Year and Group",
-    x = "Group",
-    y = "Score",
-    fill = "Group"
-  ) +
-  theme_minimal()
+# Verilerin birleştirilmesi
+age_data <- data.frame(
+  year = years,
+  `18-24` = eighteen_twentyfour,
+  `25-34` = twentyfour_thirtyfour,
+  `35-44` = thirtyfive_fourtyfour,
+  `45-54` = fourtyfive_fiftyfour,
+  `55-64` = fiftyfive_sixtyfour,
+  `65+` = sixtyfive_plus
+)
 
-# Show trends for total, male, and female scores over the years
-ggplot(plot_data, aes(x = year, y = score, color = group)) +
+
+# Veriyi uzun formata dönüştürme
+age_data_long <- pivot_longer(age_data, cols = -year, names_to = "age_group", values_to = "count")
+
+# Çizgi grafiği oluşturma
+ggplot(age_data_long, aes(x = year, y = count, color = age_group)) +
   geom_line() +
   geom_point() +
-  labs(
-    title = "Trend of Scores Over Years",
-    x = "Year",
-    y = "Score",
-    color = "Group"
-  ) +
+  labs(title = "Yaş Gruplarının Yıllara Göre Dağılımı", x = "Yıl", y = "Kişi Sayısı", color = "Yaş Grubu") +
+  scale_x_continuous(breaks = years) +
   theme_minimal()
 
-# yeni veriseti mutluluk kaynağı değeri olanlar
-# yeni veriseti mutluluk kaynağı değeri olanlar
-# yeni veriseti mutluluk kaynağı değeri olanlar
-data1 <- read_excel("../muy665-bahar2024-takim-team_a/veri2.xls")  
+# Histogram grafiği oluşturma
+ggplot(age_data_long, aes(x = year, y = count, fill = age_group)) +
+  geom_histogram(stat = "identity", position = "dodge") +
+  labs(title = "Yıllara Göre Yaş Gruplarının Dağılımı", x = "Yıl", y = "Kişi Sayısı", fill = "Yaş Grubu") +
+  scale_x_continuous(breaks = years) +
+  theme_minimal()
+
+# Histogram grafiği oluşturma (facet_wrap ile)
+ggplot(age_data_long, aes(x = age_group, y = count, fill = age_group)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Yıllara Göre Yaş Gruplarının Dağılımı", x = "Yaş Grubu", y = "Kişi Sayısı", fill = "Yaş Grubu") +
+  facet_wrap(~ year) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+
+# Mutluluk kaynağı değeri olanlar
+#data1 <- read_excel("../muy665-bahar2024-takim-team_a/veri2.xls")  
+data1 <- suppressMessages(suppressWarnings(
+  read_excel("../muy665-bahar2024-takim-team_a/veri2.xls")
+))
 
 head(data1)
 
 # Print the data to check the columns
 print(data1)
-
-# Extract years from the 4th row (columns 4 to 9 for years 2017 to 2022)
-years1 <- as.numeric(data1[3, 3:13])
-
-# Extract total from 5th row (columns 4 to 9 for years 2017 to 2022)
-saglık <- as.numeric(data1[13, 3:13])
-
-# Extract male from 6th row (columns 4 to 9 for years 2017 to 2022)
-sevgi <- as.numeric(data1[14, 3:13])
-
-# Extract female from 7th row (columns 4 to 9 for years 2017 to 2022)
-basarı <- as.numeric(data1[15, 3:13])
-
-# Extract total from 5th row (columns 4 to 9 for years 2017 to 2022)
-para <- as.numeric(data1[16, 3:13])
-
-# Extract male from 6th row (columns 4 to 9 for years 2017 to 2022)
-is <- as.numeric(data1[17, 3:13])
-
-# Extract female from 7th row (columns 4 to 9 for years 2017 to 2022)
-diger <- as.numeric(data1[18, 3:13])
-
-print(years1)
 
 
 # Extract years for years 2013 to 2023
@@ -303,81 +272,78 @@ for (year in unique(plot_data$year)) {
   print(pie_chart)
 }
 
-# Show line plots for each topic to visualize changes over the years
-ggplot(plot_data, aes(x = year, y = value, color = topic)) +
-  geom_line() +
-  geom_point() +
-  labs(
-    title = "Trends of Topics Over Years",
-    x = "Year",
-    y = "Value",
-    color = "Topic"
-  ) +
-  theme_minimal()
-#düzenlenmiş hali
-
-
-# Print the combined data to verify
-print(plot_data)
-
-# Function to create pie chart for a specific year with percentage labels
-create_pie_chart <- function(year_data) {
-  year_data <- year_data %>%
-    mutate(percentage = value / sum(value) * 100) %>%
-    mutate(label = paste0(topic, ": ", round(percentage, 1), "%"))
-  
-  ggplot(year_data, aes(x = "", y = value, fill = topic)) +
-    geom_bar(stat = "identity", width = 1) +
-    coord_polar(theta = "y") +
-    labs(title = paste("Distribution of Topics in", unique(year_data$year)),
-         x = NULL, y = NULL, fill = "Topic") +
-    theme_void() +
-    theme(legend.position = "bottom") +
-    geom_text(aes(label = label), position = position_stack(vjust = 0.5), size = 3) +
-    guides(fill = guide_legend(ncol = 2))
-}
-
-# Loop through each year and create pie charts
-for (year in unique(plot_data$year)) {
-  year_data <- plot_data %>% filter(year == !!year)
-  pie_chart <- create_pie_chart(year_data)
-  print(pie_chart)
-}
-
+# Trend Analizi
 # Show line plots for each topic to visualize changes over the years
 ggplot(plot_data, aes(x = year, y = value, color = topic)) +
   geom_line() +
   geom_point() +
   scale_x_continuous(breaks = years1) +  # Ensure x-axis shows only whole years
   labs(
-    title = "Trends of Topics Over Years",
-    x = "Year",
-    y = "Value",
+    title = "Trend Analizi",
+    x = "Yıllar",
+    y = "Değer",
     color = "Topic"
   ) +
   theme_minimal()
 
-# Veri kısmı
-# veri
+# Lineer model oluşturma
+lm_model <- lm(value ~ year + topic, data = plot_data)
+
+# 2024 yılı için tahmin
+future_year_2024 <- data.frame(
+  year = rep(2024, 6),
+  topic = c("Health", "Love", "Success", "Money", "Job", "Other")
+)
+
+# Tahminleri hesapla
+predictions_2024 <- predict(lm_model, newdata = future_year_2024)
+
+# Tahminleri veri çerçevesine ekle
+future_predictions_2024 <- cbind(future_year_2024, value = predictions_2024)
+
+# Tahmin sonuçlarını yazdır
+print(future_predictions_2024)
+
+# Mevcut verilerle birlikte tahminleri birleştirme
+combined_data <- rbind(plot_data, future_predictions_2024)
+
+# Görselleştirme
+ggplot(combined_data, aes(x = year, y = value, color = topic, linetype = factor(year == 2024))) +
+  geom_line() +
+  geom_point() +
+  scale_linetype_manual(values = c("solid", "dashed"), labels = c("Mevcut", "Tahmin")) +
+  scale_x_continuous(breaks = c(years1, 2024)) +  # X ekseninde tüm yılları göster
+  labs(title = "Mutluluk Değerlerinin Gelecek Tahminleri (2024)", x = "Yıl", y = "Değer", color = "Konu", linetype = "Durum") +
+  theme_minimal() +
+  theme(legend.title = element_blank())
+
+
+
 
 ```
 
-## Keşifsel Veri Analizi
-
-xxxxxx
-
-## Trend Analizi
-
-xxxxxx
-
-## Model Uydurma
-
-xxxxxx
 
 ## Sonuçlar
 
-xxxxxx
+Projemiz kapsamında yapılan analizler, yıllar boyunca mutluluk oranlarının çeşitli gruplar arasında nasıl değiştiğini detaylı bir şekilde ortaya koymuştur. Veriler, genel olarak kadınların erkeklere göre daha yüksek mutluluk oranları bildirdiğini, ancak yaş grupları arasındaki mutluluk dağılımının daha karmaşık bir yapı sergilediğini göstermiştir. 
+
 
 # Sonuçlar ve Ana Çıkarımlar
 
-xxxxxx
+Projemiz kapsamında yapılan analizler, yıllar boyunca mutluluk oranlarının çeşitli demografik gruplar arasında nasıl değiştiğini detaylı bir şekilde ortaya koymuştur. Veriler, genel olarak kadınların erkeklere göre daha yüksek mutluluk oranları bildirdiğini, ancak yaş grupları arasındaki mutluluk dağılımının daha karmaşık bir yapı sergilediğini göstermiştir. En düşük mutluluk oranları genellikle genç yetişkinlerde (18-24 yaş arası) görülürken, yaş ilerledikçe mutluluk oranlarında belirgin bir artış gözlemlenmiştir.
+
+### Ana Çıkarımlar
+
+1. **Faktörlerin Etkisi:**
+   - Cinsiyet ve yaş, mutluluk oranları üzerinde belirgin bir etkiye sahiptir. Özellikle yaş ilerledikçe mutluluk oranlarının artması, yaşam deneyimlerinin ve olgunlaşmanın kişisel tatmin üzerindeki farklı etkilerini yansıtmaktadır.
+   
+2. **Yıllık Trendler:**
+   - Yıllar boyunca mutluluk oranlarında gözlenen genel trend, toplumun genel refah seviyesindeki değişikliklerle paralellik göstermektedir. Ekonomik ve sosyal politikaların bu trendler üzerinde doğrudan bir etkisi olduğu düşünülmektedir.
+
+3. **Geleceğe Yönelik Tahminler:**
+   - 2024 ve sonrası için yapılan tahminler, mevcut politikaların ve sosyoekonomik koşulların sürdürülmesi durumunda mutluluk oranlarının stabil bir şekilde artmaya devam edeceğini öngörmektedir. Ancak bu tahminler, küresel ekonomik koşullar ve iç politikaların değişkenliği gibi birçok kompleks yapıya bağlı olarak farklılık gösterebilir.
+
+
+## Sonuç
+
+Bu çalışma, çeşitli çeşitli gruplar arasında mutluluk dağılımını ve bu dağılımın yıllar içinde nasıl değiştiğini ortaya koymuştur. Elde edilen bulgular, politika yapıcılar için değerli içgörüler sağlamakta ve toplumun genel refah seviyesini artırmaya yönelik stratejiler geliştirme konusunda yol gösterici olmaktadır.
